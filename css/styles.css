@@ -107,7 +107,18 @@ textarea {
   font-size: 1em;
 }
 
-textarea,
+input{
+  display: block;
+  width: 50%;
+  color: #2c3e50;
+  background: #ecf1f5;
+  border-radius: 5px;
+  border-left: 5px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #cbd7e3;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
 .news {
   width: 95%;
 }

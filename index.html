@@ -31,7 +31,10 @@
           <div>
             <h4>Add News</h4> 
           <form id="newsForm" action="/credo/v1/news/:id/news" method="post" class="add-news-container">
-            <textarea name="news" type="text" id="id=" myTextarea"" placeholder="Add News" rows="5"></textarea>
+            <input type="text" name="avatar" id="avatar" placeholder="Avatar"/>
+            <input type="text" name="author" id="author" placeholder="Add Author"/>
+            <input type="text" name="url" id="url" placeholder="Add Url"/>
+            <textarea name="title" type="text" id="myTextarea" placeholder="Add News" rows="5"></textarea>
             <div><button type="submit" class="btnSubmit">Submit news</button></div>  
             <input type="hidden" name="editId" class="editId">
           </form>
