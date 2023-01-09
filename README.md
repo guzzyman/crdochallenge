@@ -1,5 +1,3 @@
-Create a README.md file detailing how to run a vanilla javascript app with local server
-
 # Running the Vanilla JavaScript App from the Repo
 
 This guide will show you how to run the vanilla JavaScript app from the repo https://github.com/guzzyman/crdochallenge.git with a local server.
