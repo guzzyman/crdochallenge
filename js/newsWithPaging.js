@@ -133,8 +133,8 @@ newsformElement.addEventListener("submit", (e) => {
         <div>
           <span class='edit' onclick=handleEdit(${data.id})>Edit</span>  |  <span class='delete' onclick=deleteItem(${data.id})>Delete</span>
         </div>`;
-            const newsSectionElement = document.querySelector(".news");
-            newsSectionElement.appendChild(newsElement);
+            // const newssSectionElement = document.querySelector(".news");
+            // newssSectionElement.appendChild(newsElement);
             // Reset form element
             newsformElement.reset();
           });
