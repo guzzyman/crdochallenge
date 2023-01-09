@@ -165,57 +165,9 @@ fetch(`${baseUrl}/news/${myParam}`)
               });
       }
     });
-
-    // Edit a comment on news item
-    const editElementsArray = Array.from(document.querySelectorAll(".edit"));
-    console.log(editElementsArray);
-    editElementsArray.forEach((element) => {
-      element.addEventListener("click", () => {
-        const editIdValue = element.dataset.editId;
-        const editCommentValueInputElement = prompt("Enter your edited value");
-        fetch(`${baseUrl}/news/${myParam}/comments/${editIdValue}`, {
-          method: "PUT",
-          body: JSON.stringify({
-            comment: editCommentValueInputElement,
-          }),
-          headers: {
-            "Content-Type": "application / json",
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            // Update DOM with edited value
-            element.parentNode.innerText = `<span class='edit' data-id=${data.id} >Edit</span><span class='delete' data-id=${data.id} >Delete</span > ${data.source}`;
-          });
-      });
-    });
-
-    // Delete a comment on news item
-    const deleteElementsArray = Array.from(
-      document.querySelectorAll(".delete")
-    );
-
-    deleteElementsArray.forEach((element) => {
-      element.addEventListener("click", (e) => {
-        const deleteIdValue = e.target.dataset.id;
-        console.log(deleteIdValue);
-        fetch(`${baseUrl}/news/${deleteIdValue}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application / json",
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            // Remove deleted element from DOM
-            element.parentNode.remove();
-          });
-      });
-    });
   });
 
+  // Delete comments
 function deleteItem(id) {
   console.log(`${baseUrl}/news/${myParam}/comments/${id}`);
   // Get the item row by its ID.
@@ -243,6 +195,7 @@ function deleteItem(id) {
     });
 }
 
+// Update textarea/parameters before update
 function handleEdit(id) {
   // Get the item row by its ID.
   var commentRow = document.getElementById("comment-" + id);
