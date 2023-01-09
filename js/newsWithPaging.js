@@ -112,9 +112,9 @@ newsformElement.addEventListener("submit", (e) => {
       ? fetch(editRequest)
           .then((response) => response.json())
           .then((data) => {
-            // Append new news to DOM
+            // Append news to DOM
             const newsElement = document.createElement("div");
-            newsElement.className = "newsItem";
+            newsElement.className = "news-item-container";
             newsElement.innerHTML = `<div id="news-${data.id}">${data.news}</div> 
             <div>
               <span class='edit' onclick=handleEdit(${data.id})>Edit</span>  |  <span class='delete' onclick=deleteItem(${data.id})>Delete</span>
@@ -133,8 +133,8 @@ newsformElement.addEventListener("submit", (e) => {
         <div>
           <span class='edit' onclick=handleEdit(${data.id})>Edit</span>  |  <span class='delete' onclick=deleteItem(${data.id})>Delete</span>
         </div>`;
-            const newssSectionElement = document.querySelector(".newss");
-            newssSectionElement.appendChild(newsElement);
+            const newsSectionElement = document.querySelector(".news");
+            newsSectionElement.appendChild(newsElement);
             // Reset form element
             newsformElement.reset();
           });
