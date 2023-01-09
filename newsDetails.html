@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="news-details">
+      <div class="container">
+        <!-- Slider for images -->
+        <div class="slider">
+            <div class="news-images">
+            </div>
+            <div class="buttons"><a class="prev" href="#"><</a><a class="next" href="#">></a></div>
+          </div>
+        <div class="news-infoBox">
+          <h1>News Title</h1>
+          <div class="news-content">
+            <!-- Content of the news -->
+          </div>
+          <h4>News Comment(s)</h4>
+          <div class="comments">
+            <!-- Comments section -->
+          </div>
+          <h4>Add Comment(s)</h4>
+          <form id="commentForm" action="/credo/v1/news/:id/comments" method="post">
+            <!-- <input type="text" name="comment" placeholder="Add a comment." /> -->
+            <textarea name="comment" type="text" id="id=" myTextarea"" placeholder="Add Comment" cols="30" rows="5"></textarea>
+            <div><button type="submit" class="btnSubmit">Submit Comment</button></div>  
+            <input type="hidden" name="editId" class="editId">
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
+<script src="js/details.js"></script>

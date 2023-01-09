@@ -1,0 +1,74 @@
+<div class="news-images">
+  <div class="slider">
+    <div class="slide-track">
+      <!-- Slides will be added here -->
+    </div>
+  </div>
+
+  <button class="prev-btn">Prev</button>
+  <button class="next-btn">Next</button>
+</div>
+<script>
+  let slider = document.querySelector(".news-images");
+  let slideTrack = document.querySelector(".slide-track");
+  let prevBtn = document.querySelector(".prev-btn");
+  let nextBtn = document.querySelector(".next-btn");
+  let currentSlide = 0; // Keep track of the current slide
+  let slidesToShow = 1; // Number of slides to show at a time
+  const imageData = [];
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get("id");
+  const baseUrl = `https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1`;
+
+  fetch(`${baseUrl}/news/${myParam}/images`)
+    .then((response) => response.json())
+    .then((data) => {
+      let images = "";
+      imageData.push(data)
+      data.forEach((image, index) => {
+        // Add active class to the first slide
+        console.log(image);
+        if (index === 0) {
+          images += `<img src=${image.image} alt="" width="100%" height="200px" class="active" />`;
+        } else {
+          images += `<img src=${image.image} alt="" width="100%" height="200px" />`;
+        }
+      });
+
+      slideTrack.innerHTML = images;
+    });
+
+  // When the prev button is clicked, move back one slide
+  prevBtn.addEventListener("click", () => {
+    currentSlide--;
+
+    if (currentSlide < 0) {
+      currentSlide = imageData.length - slidesToShow;
+    }
+
+    moveToSlide(currentSlide); // Move to the previous slide
+  }); // When the next button is clicked, move forward one slide
+
+  nextBtn.addEventListener("click", () => {
+    // Increment current slide by 1
+    currentSlide++;
+    // If it's past the last slide, go back to 0
+    if (currentSlide > imageData.length - slidesToShow) {
+      currentSlide = 0;
+    }
+    moveToSlide(currentSlide);
+    // Move to the next slide
+  });
+  
+  function moveToSlide(currentSlide) {
+    let slides = document.querySelectorAll(".slider .slider__item");
+    let activeClassName = "active";
+    for (let i = 0; i < slides.length; i++) {
+      if (i === currentSlide) {
+        slides[i].classList.add(activeClassName);
+      } else {
+        slides[i].classList.remove(activeClassName);
+      }
+    }
+  }
+</script>

@@ -1,0 +1,226 @@
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+}
+
+.news-item {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.news-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin: auto;
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.commentItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.news-content {
+  background: #f1f6fa;
+  padding: 15px;
+  margin: 0 0 20px 0;
+  border-radius: 5px;
+  clear: both;
+}
+
+.container {
+  width: 80%;
+  background: white;
+  margin: 50px auto 20px auto;
+  box-shadow: 0 -5px 15px rgb(0 0 0 / 10%);
+}
+
+.news-infoBox {
+  padding: 2em 3em;
+  color: #2c3e50;
+}
+
+h3 {
+  font-weight: 200;
+  margin-bottom: 1em;
+}
+
+.news-infoBox h1 {
+  font-size: 2em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px dotted #bdc3c7;
+  text-transform: uppercase;
+}
+
+div.commentItem:nth-child(odd) {
+  background-color: #f9fafb;
+}
+div.commentItem:nth-child(even) {
+  background-color: #ffffff;
+}
+
+div.news-item-container:nth-child(odd) {
+  background-color: #f9fafb;
+}
+
+.edit,
+.delete {
+  cursor: pointer;
+  color: cadetblue;
+  text-decoration: none;
+}
+
+textarea {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  color: #2c3e50;
+  background: #ecf1f5;
+  border-radius: 5px;
+  border-left: 5px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #cbd7e3;
+  padding: 10px;
+  font-size: 1em;
+}
+
+textarea,
+.news {
+  width: 95%;
+}
+
+button {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1.5em;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #364b61;
+  cursor: pointer;
+}
+
+.slider {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.slider .buttons {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  top: 30%;
+  font-size: 3em;
+  font-weight: bold;
+}
+.slider a {
+  text-decoration: none;
+  color: black;
+}
+.slider a:hover {
+  color: #4d4d4d;
+}
+.slider .news-images {
+  position: relative;
+  height: 200px;
+}
+.slider .block {
+  /* height: 100%; */
+  width: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.slider .block.active {
+  opacity: 1;
+}
+.active {
+}
+
+.add-news {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.add-news-container {
+    margin: auto;
+}
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 10% auto;
+  width: 40%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  padding: 15px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+}
+
+.modal-footer {
+  padding: 10px;
+  text-align: center;
+}
+
+.closeBtn {
+  font-size: 30px;
+  color: #fff;
+  float: right;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: #e439ef;
+  text-decoration: none;
+  cursor: pointer;
+}
